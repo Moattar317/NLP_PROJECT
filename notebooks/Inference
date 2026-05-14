@@ -1,0 +1,81 @@
+
+# MAPO - Multilingual Mathematical Reasoning Inference
+
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+# -------------------------------
+# Load model (already DPO-tuned)
+# -------------------------------
+MODEL_NAME = "kevinpro/MathOctopus-MAPO-DPO-7B"
+
+print("Loading tokenizer...")
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, trust_remote_code=True)
+if tokenizer.pad_token is None:
+    tokenizer.pad_token = tokenizer.eos_token
+
+print("Loading model...")
+model = AutoModelForCausalLM.from_pretrained(
+    MODEL_NAME,
+    torch_dtype=torch.bfloat16,
+    device_map="auto",
+    trust_remote_code=True
+)
+model.eval()
+print("Model loaded successfully.\n")
+
+# -------------------------------
+# Helper function
+# -------------------------------
+def solve(question: str, max_new_tokens=128):
+    prompt = f"Solve this math problem step by step: {question}"
+    inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=512).to(model.device)
+    with torch.no_grad():
+        outputs = model.generate(
+            **inputs,
+            max_new_tokens=max_new_tokens,
+            do_sample=False,
+            pad_token_id=tokenizer.pad_token_id
+        )
+    response = tokenizer.decode(outputs[0][inputs.input_ids.shape[1]:], skip_special_tokens=True)
+    return response
+
+# -------------------------------
+# Example questions
+# -------------------------------
+test_questions = [
+    "What is 15 + 27?",
+    "If a train travels 60 miles per hour for 3 hours, how far does it travel?",
+    "John has 5 apples. He gives 2 to Mary. How many apples does John have left?"
+]
+
+for q in test_questions:
+    print(f"Q: {q}")
+    ans = solve(q)
+    print(f"A: {ans}\n{'-'*50}")
+
+
+test_questions_multilingual = [
+    ("Bengali", "15 + 27 কত?"),
+    ("Spanish", "¿Cuánto es 15 + 27?"),
+    ("French", "Combien font 15 + 27 ?"),
+]
+
+for lang, q in test_questions_multilingual:
+    print(f"\n{lang}: {q}")
+    ans = solve(q)
+    print(f"Answer: {ans}")
+
+# Additional multilingual examples
+more_questions = [
+    ("Bengali", "5টি কলমের দাম 50 টাকা হলে, 1টি কলমের দাম কত?"),
+    ("Spanish", "Si tienes 10 manzanas y comes 3, ¿cuántas te quedan?"),
+    ("French", "Si un train roule à 60 km/h pendant 2 heures, quelle distance parcourt-il?")
+]
+
+for lang, q in more_questions:
+    print(f"\n{lang}: {q}")
+    ans = solve(q)
+    print(f"Answer: {ans}")
+    print("-" * 50)
+
