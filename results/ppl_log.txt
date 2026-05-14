@@ -1,0 +1,83 @@
+Starting Preference Estimation (single GPU)
+Processing language: en
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'utils'
+usage: PPL_batched.py [-h] [--begin_index BEGIN_INDEX]
+                      [--data_length DATA_LENGTH] [--data_file DATA_FILE]
+PPL_batched.py: error: unrecognized arguments: --src_file ../Data/numglue/train.json --tgt_file ../Data/numglue/scores_en.json --model_path facebook/nllb-200-distilled-600M --src_lang eng_Latn --tgt_lang --batch_size 8
+Finished en
+Processing language: bn
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'utils'
+usage: PPL_batched.py [-h] [--begin_index BEGIN_INDEX]
+                      [--data_length DATA_LENGTH] [--data_file DATA_FILE]
+PPL_batched.py: error: unrecognized arguments: --src_file ../Data/numglue/train.json --tgt_file ../Data/numglue/scores_bn.json --model_path facebook/nllb-200-distilled-600M --src_lang eng_Latn --tgt_lang --batch_size 8
+Finished bn
+Processing language: th
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'utils'
+usage: PPL_batched.py [-h] [--begin_index BEGIN_INDEX]
+                      [--data_length DATA_LENGTH] [--data_file DATA_FILE]
+PPL_batched.py: error: unrecognized arguments: --src_file ../Data/numglue/train.json --tgt_file ../Data/numglue/scores_th.json --model_path facebook/nllb-200-distilled-600M --src_lang eng_Latn --tgt_lang --batch_size 8
+Finished th
+Processing language: sw
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'utils'
+usage: PPL_batched.py [-h] [--begin_index BEGIN_INDEX]
+                      [--data_length DATA_LENGTH] [--data_file DATA_FILE]
+PPL_batched.py: error: unrecognized arguments: --src_file ../Data/numglue/train.json --tgt_file ../Data/numglue/scores_sw.json --model_path facebook/nllb-200-distilled-600M --src_lang eng_Latn --tgt_lang --batch_size 8
+Finished sw
+Processing language: ja
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'utils'
+usage: PPL_batched.py [-h] [--begin_index BEGIN_INDEX]
+                      [--data_length DATA_LENGTH] [--data_file DATA_FILE]
+PPL_batched.py: error: unrecognized arguments: --src_file ../Data/numglue/train.json --tgt_file ../Data/numglue/scores_ja.json --model_path facebook/nllb-200-distilled-600M --src_lang eng_Latn --tgt_lang --batch_size 8
+Finished ja
+Processing language: zh
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'utils'
+usage: PPL_batched.py [-h] [--begin_index BEGIN_INDEX]
+                      [--data_length DATA_LENGTH] [--data_file DATA_FILE]
+PPL_batched.py: error: unrecognized arguments: --src_file ../Data/numglue/train.json --tgt_file ../Data/numglue/scores_zh.json --model_path facebook/nllb-200-distilled-600M --src_lang eng_Latn --tgt_lang --batch_size 8
+Finished zh
+Processing language: ru
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'utils'
+usage: PPL_batched.py [-h] [--begin_index BEGIN_INDEX]
+                      [--data_length DATA_LENGTH] [--data_file DATA_FILE]
+PPL_batched.py: error: unrecognized arguments: --src_file ../Data/numglue/train.json --tgt_file ../Data/numglue/scores_ru.json --model_path facebook/nllb-200-distilled-600M --src_lang eng_Latn --tgt_lang --batch_size 8
+Finished ru
+Processing language: de
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'utils'
+usage: PPL_batched.py [-h] [--begin_index BEGIN_INDEX]
+                      [--data_length DATA_LENGTH] [--data_file DATA_FILE]
+PPL_batched.py: error: unrecognized arguments: --src_file ../Data/numglue/train.json --tgt_file ../Data/numglue/scores_de.json --model_path facebook/nllb-200-distilled-600M --src_lang eng_Latn --tgt_lang --batch_size 8
+Finished de
+Processing language: es
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'utils'
+usage: PPL_batched.py [-h] [--begin_index BEGIN_INDEX]
+                      [--data_length DATA_LENGTH] [--data_file DATA_FILE]
+PPL_batched.py: error: unrecognized arguments: --src_file ../Data/numglue/train.json --tgt_file ../Data/numglue/scores_es.json --model_path facebook/nllb-200-distilled-600M --src_lang eng_Latn --tgt_lang --batch_size 8
+Finished es
+Processing language: fr
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'utils'
+usage: PPL_batched.py [-h] [--begin_index BEGIN_INDEX]
+                      [--data_length DATA_LENGTH] [--data_file DATA_FILE]
+PPL_batched.py: error: unrecognized arguments: --src_file ../Data/numglue/train.json --tgt_file ../Data/numglue/scores_fr.json --model_path facebook/nllb-200-distilled-600M --src_lang eng_Latn --tgt_lang --batch_size 8
+Finished fr
+python3: can't open file '/content/MAPO/Preprocess/merge_all_scores.py': [Errno 2] No such file or directory
+Preference Estimation complete
