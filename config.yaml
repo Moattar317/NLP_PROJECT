@@ -1,0 +1,12 @@
+base_model: "kevinpro/MathOctopus-MAPO-DPO-7B"
+nllb_model: "facebook/nllb-200-distilled-600M"
+languages: ["bn","th","sw","ja","zh","ru","de","es","fr","en"]
+dpo:
+  beta: 0.1
+  learning_rate: 1e-6
+  max_steps: 500
+sft:
+  learning_rate: 2e-4
+  epochs: 1
+batch_size: 2
+max_length: 512
